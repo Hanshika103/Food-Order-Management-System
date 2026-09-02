@@ -14,9 +14,8 @@ public class DBConnection {
     // MySQL username
     private static final String USER = "root";
 
-    // MySQL password
-private static final String PASS = System.getenv("DB_PASSWORD"); 
-    // ⚠️ In real projects, never hardcode password (use config file or env variables)
+    // MySQL password is read from environment variable
+    private static final String PASS = System.getenv("DB_PASSWORD");
 
     // ==============================
     // METHOD: Get Database Connection

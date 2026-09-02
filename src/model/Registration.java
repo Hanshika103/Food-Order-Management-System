@@ -1,75 +1,56 @@
-package model; // Model layer package (stores data classes only)
+package model;
 
-// This class represents a user registration record
 public class Registration {
+    private int regId; // optional, auto-increment in DB
+    private String name;
+    private String email;
+    private String password;
 
-    // ==============================
-    // FIELDS (DATA MEMBERS)
-    // ==============================
-
-    private int regId; // unique ID from database (auto-increment)
-    private String name; // user name
-    private String email; // user email
-    private String password; // user password
-
-    // ==============================
-    // CONSTRUCTOR 1 (FOR INSERTING NEW USER)
-    // ==============================
+    // Constructor without ID (for inserting new registration)
     public Registration(String name, String email, String password) {
-
-        this.name = name; // assign name
-        this.email = email; // assign email
-        this.password = password; // assign password
+        this.name = name;
+        this.email = email;
+        this.password = password;
     }
 
-    // ==============================
-    // CONSTRUCTOR 2 (FOR FETCHING FROM DATABASE)
-    // ==============================
+    // Constructor with ID (for fetching from DB)
     public Registration(int regId, String name, String email, String password) {
-
-        this.regId = regId; // assign ID from DB
-        this.name = name; // assign name
-        this.email = email; // assign email
-        this.password = password; // assign password
+        this.regId = regId;
+        this.name = name;
+        this.email = email;
+        this.password = password;
     }
 
-    // ==============================
-    // GETTERS (READ DATA)
-    // ==============================
-
+    // Getters and Setters
     public int getRegId() {
-        return regId; // return user ID
+        return regId;
+    }
+
+    public void setRegId(int regId) {
+        this.regId = regId;
     }
 
     public String getName() {
-        return name; // return name
-    }
-
-    public String getEmail() {
-        return email; // return email
-    }
-
-    public String getPassword() {
-        return password; // return password
-    }
-
-    // ==============================
-    // SETTERS (UPDATE DATA)
-    // ==============================
-
-    public void setRegId(int regId) {
-        this.regId = regId; // update ID
+        return name;
     }
 
     public void setName(String name) {
-        this.name = name; // update name
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String email) {
-        this.email = email; // update email
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public void setPassword(String password) {
-        this.password = password; // update password
+        this.password = password;
     }
 }
